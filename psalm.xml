@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<psalm
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="https://getpsalm.org/schema/config"
+        xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+
+        errorLevel="1"
+        findUnusedBaselineEntry="true"
+        findUnusedCode="false"
+>
+    <projectFiles>
+        <directory name="src" />
+        <ignoreFiles>
+            <directory name="vendor" />
+        </ignoreFiles>
+    </projectFiles>
+    <plugins>
+        <pluginClass class="PhpStaticAnalysis\PsalmPlugin\Plugin" />
+    </plugins>
+</psalm>

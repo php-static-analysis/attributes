@@ -1,0 +1,56 @@
+{
+    "name": "php-static-analysis/attributes",
+    "description": "Attributes used instead of PHPDocs for static analysis tools",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "PhpStaticAnalysis\\Attributes\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Carlos Granados",
+            "email": "carlos@fastdebug.io"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "php-static-analysis/phpstan-extension": "dev-main",
+        "php-static-analysis/psalm-plugin": "dev-main",
+        "phpstan/extension-installer": "^1.3",
+        "phpstan/phpstan": "^1.8",
+        "phpunit/phpunit": "^9.0",
+        "symplify/easy-coding-standard": "^12.1",
+        "vimeo/psalm": "^5"
+    },
+    "scripts": {
+        "phpstan": "phpstan analyse",
+        "phpstan-debug": "phpstan analyse --xdebug --debug",
+        "ecs": "ecs",
+        "ecs-fix": "ecs --fix",
+        "phpunit": "phpunit",
+        "psalm": "psalm",
+        "tests": [
+            "@ecs",
+            "@phpstan",
+            "@phpunit",
+            "@psalm"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        },
+        "sort-packages": true
+    },
+    "suggest": {
+        "php-static-analysis/phpstan-extension": "PHPStan extension to read static analysis attributes",
+        "php-static-analysis/psalm-plugin": "Psalm plugin to read static analysis attributes",
+        "php-static-analysis/rector-rule": "RectorPHP rule to convert PHPDoc annotations to static analysis attributes"
+    }
+}
