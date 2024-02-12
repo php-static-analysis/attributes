@@ -16,6 +16,8 @@ If the function or method has more than one parameter, the types for the differe
 
 If any of the parameters is variadic, the `...` operator needs to be listed with the type, not the argument name.
 
+You can also directly apply the attribute to any of the method/function parameters. In that case, the name of the argument is optional and, if added, should match the name of the parameter to which it is applied.
+
 ## Example usage
 
 ```php
@@ -58,5 +60,12 @@ class ParamExample
     public function variadicMethodParam(...$params)
     {
     }    
+
+    // Attribute applied at parameter level
+    public function paramOnParam(
+        #[Param('string[]')]
+        array $param
+    ) {
+    }
 }
 ```

@@ -54,6 +54,11 @@ class ParamTest extends TestCase
         $this->assertEquals(['params' => 'string ...'], $this->variadicMethodParam('Test'));
     }
 
+    public function testParamOnParam(): void
+    {
+        $this->assertEquals(['param' => 'string'], $this->paramOnParam('Test'));
+    }
+
     #[Param(param: 'string')]
     private function methodParam(string $param): array
     {
@@ -94,6 +99,13 @@ class ParamTest extends TestCase
         return $this->getParams(__FUNCTION__);
     }
 
+    private function paramOnParam(
+        #[Param('string')]
+        string $param
+    ): array {
+        return $this->getParams(__FUNCTION__);
+    }
+
     private function getParams(string $functionName): array
     {
         $reflection = new ReflectionMethod($this, $functionName);
@@ -109,6 +121,20 @@ class ParamTest extends TestCase
             if ($attribute->getName() === Param::class) {
                 $attribute->newInstance();
                 $params = array_merge($params, $attribute->getArguments());
+            }
+        }
+
+        $parameters = $reflection->getParameters();
+        foreach ($parameters as $parameter) {
+            $attributes = $parameter->getAttributes();
+            foreach ($attributes as $attribute) {
+                if ($attribute->getName() === Param::class) {
+                    $attribute->newInstance();
+                    $arguments = $attribute->getArguments();
+                    $argument = $arguments[array_key_first($arguments)];
+                    $params[$parameter->name] = $argument;
+                    ;
+                }
             }
         }
 
