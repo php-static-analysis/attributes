@@ -20,6 +20,7 @@
         "php": ">=8.0"
     },
     "require-dev": {
+        "php-static-analysis/node-visitor": "dev-main",
         "php-static-analysis/phpstan-extension": "dev-main",
         "php-static-analysis/psalm-plugin": "dev-main",
         "phpstan/extension-installer": "^1.3",
