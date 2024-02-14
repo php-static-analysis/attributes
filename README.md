@@ -90,13 +90,13 @@ And then install any needed extensions/plugins for the tools that you use.
 
 ## List of implemented attributes
 
-These are the available attributes and their corresponding PHPDoc annotation:
+These are the available attributes and their corresponding PHPDoc annotations:
 
-| Attribute | PHPDoc Annotation |
-|---|-------------------|
-| [IsReadOnly](doc/IsReadOnly.md)  | `@readonly`       |
-| [Param](doc/Param.md) | `@param`          |
-| [Returns](doc/Returns.md) | `@return`         |
-| [Template](doc/Template.md) | `@template`       |
-| [Type](doc/Type.md) | `@var`            |
+| Attribute | PHPDoc Annotations |
+|---|--------------------|
+| [IsReadOnly](doc/IsReadOnly.md)  | `@readonly`        |
+| [Param](doc/Param.md) | `@param`           |
+| [Returns](doc/Returns.md) | `@return`          |
+| [Template](doc/Template.md) | `@template`        |
+| [Type](doc/Type.md) | `@var` `@return`   |
 

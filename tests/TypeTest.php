@@ -60,6 +60,16 @@ class TypeTest extends TestCase
         $this->assertTrue($errorThrown);
     }
 
+    public function testMethodType(): void
+    {
+        $this->assertEquals('string', $this->methodType());
+    }
+
+    public function testFunctionType(): void
+    {
+        $this->assertEquals('string', functionType());
+    }
+
     private function propertyType(): string
     {
         return $this->getType('property');
@@ -85,9 +95,27 @@ class TypeTest extends TestCase
         return $this->getType('propertyWithMultipleTypes');
     }
 
+    #[Type('string')]
+    private function methodType(): string
+    {
+        return $this->getMethodType(__FUNCTION__);
+    }
+
     private function getType(string $propertyName): string
     {
         $reflection = new ReflectionProperty($this, $propertyName);
+        return self::getTypeFromReflection($reflection);
+    }
+
+    private function getMethodType(string $methodName): string
+    {
+        $reflection = new ReflectionMethod($this, $methodName);
+        return self::getTypeFromReflection($reflection);
+    }
+
+    public static function getTypeFromReflection(
+        ReflectionProperty | ReflectionMethod | ReflectionFunction $reflection
+    ): string {
         $attributes = $reflection->getAttributes();
         $type = '';
         foreach ($attributes as $attribute) {
@@ -99,4 +127,11 @@ class TypeTest extends TestCase
 
         return $type;
     }
+}
+
+#[Type('string')]
+function functionType(): string
+{
+    $reflection = new ReflectionFunction(__FUNCTION__);
+    return TypeTest::getTypeFromReflection($reflection);
 }

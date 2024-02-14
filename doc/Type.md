@@ -1,12 +1,14 @@
 # `Type` Attribute
 
-This attribute is the equivalent of the `@var` annotation *when used for class properties or class constants*.
+This attribute is the equivalent of the `@var` annotation *when used for class properties or class constants* and is used to specify the type of this property or constant.
 
 We could not use `Var` for the name of this attribute because `var` is a reserved word in PHP. By using `Type` we emphasize that this attribute is used to declare the type of a class property or constant.
 
+This attribute can also be used instead of using the `Returns` attribute to specify the type of the return value of a function or method, replacing the `@return` annotation.
+
 ## Arguments
 
-The attribute accepts a string which describes the type of the class property or constant. The attribute itself does not have a knowledge of which types are valid and which are not and this will depend on the implementation for each particular tool.
+The attribute accepts a string which describes the type of the class property, constant or return value. The attribute itself does not have a knowledge of which types are valid and which are not and this will depend on the implementation for each particular tool.
 
 We expect that the attribute will be able to accept both basic types like `string` or `array` and more advanced types like `array<string>` or `Collection<int>`. We aim to accept all the types accepted by static analysis tools for the `@var` annotation.
 
@@ -24,7 +26,12 @@ class TypeExample
 
     #[Type('Array<int>')]
     private array $nums;
-    
+
+    #[Type('Array<int>')]
+    private function returnsArray()
+    {
+        return [1];
+    }    
     ...
 }
 ```
