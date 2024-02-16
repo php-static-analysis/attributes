@@ -92,12 +92,14 @@ And then install any needed extensions/plugins for the tools that you use.
 
 These are the available attributes and their corresponding PHPDoc annotations:
 
-| Attribute                       | PHPDoc Annotations |
-|---------------------------------|--------------------|
-| [IsReadOnly](doc/IsReadOnly.md) | `@readonly`        |
-| [Param](doc/Param.md)           | `@param`           |
-| [Property](doc/Property.md)     | `@property` `@var` |
-| [Returns](doc/Returns.md)       | `@return`          |
-| [Template](doc/Template.md)     | `@template`        |
-| [Type](doc/Type.md)             | `@var` `@return`   |
+| Attribute                             | PHPDoc Annotations |
+|---------------------------------------|--------------------|
+| [IsReadOnly](doc/IsReadOnly.md)       | `@readonly`        |
+| [Param](doc/Param.md)                 | `@param`           |
+| [Property](doc/Property.md)           | `@property` `@var` |
+| [PropertyRead](doc/PropertyRead.md)   | `@property-read`   |
+| [PropertyWrite](doc/PropertyWrite.md) | `@property-write`  |
+| [Returns](doc/Returns.md)             | `@return`          |
+| [Template](doc/Template.md)           | `@template`        |
+| [Type](doc/Type.md)                   | `@var` `@return`   |
 
