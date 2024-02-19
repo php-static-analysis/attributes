@@ -6,7 +6,7 @@ This attribute is the equivalent of the `@property-read` annotation and is used 
 
 The attribute accepts one or more strings which describe the type of the properties. The attribute itself does not have a knowledge of which types are valid and which are not and this will depend on the implementation for each particular tool.
 
-We expect that the attribute will be able to accept both basic types like `string` or `array` and more advanced types like `array<string>` or `Collection<int>`. We aim to accept all the types accepted by static analysis tools for the `@property` annotation.
+We expect that the attribute will be able to accept both basic types like `string` or `array` and more advanced types like `array<string>` or `Collection<int>`. We aim to accept all the types accepted by static analysis tools for the `@property-read` annotation.
 
 The arguments can be named arguments and the type is applied to the properties with the same name in the class.
 

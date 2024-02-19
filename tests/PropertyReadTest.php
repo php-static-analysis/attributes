@@ -25,7 +25,7 @@ class PropertyReadTest extends TestCase
     }
 
     public static function getPropertiesFromReflection(
-        ReflectionProperty | ReflectionClass $reflection
+        ReflectionClass $reflection
     ): array {
         $attributes = $reflection->getAttributes();
         $properties = [];
