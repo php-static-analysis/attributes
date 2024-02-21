@@ -41,8 +41,8 @@ class ArrayAdder
     private array $result;
 
     /**
-     * @param array<string> $array1
-     * @param array<string> $array2
+     * @param array<string> $array1 the first array
+     * @param array<string> $array2 the second array
      * @return array<string>
      */
     public function addArrays(array $array1, array $array2): array
@@ -67,8 +67,8 @@ class ArrayAdder
     #[Type('array<string>')]
     private array $result;
 
-    #[Param(array1: 'array<string>')]
-    #[Param(array2: 'array<string>')]
+    #[Param(array1: 'array<string>')] // the first array
+    #[Param(array2: 'array<string>')] // the second array
     #[Returns('array<string>')]
     public function addArrays(array $array1, array $array2): array
     {
