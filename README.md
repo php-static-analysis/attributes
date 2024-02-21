@@ -94,6 +94,7 @@ These are the available attributes and their corresponding PHPDoc annotations:
 
 | Attribute                                             | PHPDoc Annotations        |
 |-------------------------------------------------------|---------------------------|
+| [Deprecated](doc/Deprecated.md)                       | `@deprecated`             |
 | [IsReadOnly](doc/IsReadOnly.md)                       | `@readonly`               |
 | [Method](doc/Method.md)                               | `@method`                 |
 | [Param](doc/Param.md)                                 | `@param`                  |

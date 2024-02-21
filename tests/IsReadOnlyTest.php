@@ -27,12 +27,12 @@ class IsReadOnlyTest extends TestCase
 
     public function testReadOnlyProperty(): void
     {
-        $this->assertEquals(true, $this->readOnlyProperty());
+        $this->assertTrue($this->readOnlyProperty());
     }
 
     public function testReadOnlyPropertyWithValue(): void
     {
-        $this->assertEquals(true, $this->readOnlyPropertyWithValue());
+        $this->assertTrue($this->readOnlyPropertyWithValue());
     }
 
     public function testMultipleReadOnly(): void
