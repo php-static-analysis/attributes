@@ -10,7 +10,7 @@ We expect that the attribute will be able to accept all the signatures accepted 
 
 The arguments need to be unnamed arguments.
 
-If the class has more than one method that we want to specify, the types for the different properties can either be declared as a list of strings for a single `Method` attribute or as a list of `Method` attributes (or even a combination of both, though we don't expect this to be actually used).
+If the class has more than one method that we want to specify, the signatures for the different functions can either be declared as a list of strings for a single `Method` attribute or as a list of `Method` attributes (or even a combination of both, though we don't expect this to be actually used).
 
 ## Example usage
 

@@ -98,6 +98,7 @@ These are the available attributes and their corresponding PHPDoc annotations:
 | [Internal](doc/Internal.md)                           | `@internal`               |
 | [IsReadOnly](doc/IsReadOnly.md)                       | `@readonly`               |
 | [Method](doc/Method.md)                               | `@method`                 |
+| [Mixin](doc/Mixin.md)                                 | `@mixin`                  |
 | [Param](doc/Param.md)                                 | `@param`                  |
 | [Property](doc/Property.md)                           | `@property` `@var`        |
 | [PropertyRead](doc/PropertyRead.md)                   | `@property-read`          |
