@@ -13,7 +13,7 @@ use Attribute;
 final class PropertyWrite
 {
     public function __construct(
-        string ...$params
+        string ...$properties
     ) {
     }
 }

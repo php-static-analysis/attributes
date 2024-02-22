@@ -10,10 +10,10 @@ use Attribute;
     Attribute::TARGET_CLASS |
     Attribute::IS_REPEATABLE
 )]
-final class Mixin
+final class TemplateImplements
 {
     public function __construct(
-        string ...$classes
+        string ...$interfaces
     ) {
     }
 }

@@ -13,7 +13,7 @@ use Attribute;
 final class Method
 {
     public function __construct(
-        string ...$params
+        string ...$methods
     ) {
     }
 }

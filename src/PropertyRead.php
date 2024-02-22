@@ -13,7 +13,7 @@ use Attribute;
 final class PropertyRead
 {
     public function __construct(
-        string ...$params
+        string ...$properties
     ) {
     }
 }

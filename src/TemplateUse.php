@@ -10,10 +10,10 @@ use Attribute;
     Attribute::TARGET_CLASS |
     Attribute::IS_REPEATABLE
 )]
-final class Mixin
+final class TemplateUse
 {
     public function __construct(
-        string ...$classes
+        string ...$traits
     ) {
     }
 }

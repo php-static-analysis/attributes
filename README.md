@@ -92,20 +92,23 @@ And then install any needed extensions/plugins for the tools that you use.
 
 These are the available attributes and their corresponding PHPDoc annotations:
 
-| Attribute                                             | PHPDoc Annotations        |
-|-------------------------------------------------------|---------------------------|
-| [Deprecated](doc/Deprecated.md)                       | `@deprecated`             |
-| [Internal](doc/Internal.md)                           | `@internal`               |
-| [IsReadOnly](doc/IsReadOnly.md)                       | `@readonly`               |
-| [Method](doc/Method.md)                               | `@method`                 |
-| [Mixin](doc/Mixin.md)                                 | `@mixin`                  |
-| [Param](doc/Param.md)                                 | `@param`                  |
-| [Property](doc/Property.md)                           | `@property` `@var`        |
-| [PropertyRead](doc/PropertyRead.md)                   | `@property-read`          |
-| [PropertyWrite](doc/PropertyWrite.md)                 | `@property-write`         |
-| [Returns](doc/Returns.md)                             | `@return`                 |
-| [Template](doc/Template.md)                           | `@template`               |
-| [TemplateContravariant](doc/TemplateContravariant.md) | `@template-contravariant` |
-| [TemplateCovariant](doc/TemplateCovariant.md)         | `@template-covariant`     |
-| [Type](doc/Type.md)                                   | `@var` `@return`          |
+| Attribute                                             | PHPDoc Annotations                   |
+|-------------------------------------------------------|--------------------------------------|
+| [Deprecated](doc/Deprecated.md)                       | `@deprecated`                        |
+| [Internal](doc/Internal.md)                           | `@internal`                          |
+| [IsReadOnly](doc/IsReadOnly.md)                       | `@readonly`                          |
+| [Method](doc/Method.md)                               | `@method`                            |
+| [Mixin](doc/Mixin.md)                                 | `@mixin`                             |
+| [Param](doc/Param.md)                                 | `@param`                             |
+| [Property](doc/Property.md)                           | `@property` `@var`                   |
+| [PropertyRead](doc/PropertyRead.md)                   | `@property-read`                     |
+| [PropertyWrite](doc/PropertyWrite.md)                 | `@property-write`                    |
+| [Returns](doc/Returns.md)                             | `@return`                            |
+| [Template](doc/Template.md)                           | `@template`                          |
+| [TemplateContravariant](doc/TemplateContravariant.md) | `@template-contravariant`            |
+| [TemplateCovariant](doc/TemplateCovariant.md)         | `@template-covariant`                |
+| [TemplateExtends](doc/TemplateExtends.md)             | `@extends` `@template-extends`       |
+| [TemplateImplements](doc/TemplateImplements.md)       | `@implements` `@template-implements` |
+| [TemplateUse](doc/TemplateUse.md)                     | `@use` `@template-use`               |
+| [Type](doc/Type.md)                                   | `@var` `@return`                     |
 

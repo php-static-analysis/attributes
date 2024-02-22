@@ -4,7 +4,7 @@ This attribute is the equivalent of the `@mixin` annotation and is used to speci
 
 ## Arguments
 
-The attribute accepts one or more strings which describe the name of the referenced classes. The attribute itself does not have a knowledge of which signatures are valid and which are not and this will depend on the implementation for each particular tool.
+The attribute accepts one or more strings which describe the name of the referenced classes. The attribute itself does not have a knowledge of which class names are valid and which are not and this will depend on the implementation for each particular tool.
 
 The arguments need to be unnamed arguments.
 

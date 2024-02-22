@@ -7,13 +7,12 @@ namespace PhpStaticAnalysis\Attributes;
 use Attribute;
 
 #[Attribute(
-    Attribute::TARGET_CLASS |
-    Attribute::IS_REPEATABLE
+    Attribute::TARGET_CLASS
 )]
-final class Mixin
+final class TemplateExtends
 {
     public function __construct(
-        string ...$classes
+        string $class
     ) {
     }
 }

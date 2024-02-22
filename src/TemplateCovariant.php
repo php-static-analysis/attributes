@@ -8,8 +8,6 @@ use Attribute;
 
 #[Attribute(
     Attribute::TARGET_CLASS |
-    Attribute::TARGET_METHOD |
-    Attribute::TARGET_FUNCTION |
     Attribute::IS_REPEATABLE
 )]
 final class TemplateCovariant

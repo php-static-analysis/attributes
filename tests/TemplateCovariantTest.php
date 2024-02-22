@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use PhpStaticAnalysis\Attributes\Param;
 use PhpStaticAnalysis\Attributes\TemplateCovariant;
 use PHPUnit\Framework\TestCase;
 
