@@ -105,6 +105,7 @@ These are the available attributes and their corresponding PHPDoc annotations:
 | [PropertyRead](doc/PropertyRead.md)                   | `@property-read`                     |
 | [PropertyWrite](doc/PropertyWrite.md)                 | `@property-write`                    |
 | [Returns](doc/Returns.md)                             | `@return`                            |
+| [SelfOut](doc/SelfOut.md)                             | `@self-out` `@this-out`               |
 | [Template](doc/Template.md)                           | `@template`                          |
 | [TemplateContravariant](doc/TemplateContravariant.md) | `@template-contravariant`            |
 | [TemplateCovariant](doc/TemplateCovariant.md)         | `@template-covariant`                |
