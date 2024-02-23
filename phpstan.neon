@@ -11,6 +11,6 @@ parameters:
     - '#^Constructor of class PhpStaticAnalysis\\Attributes\\[a-zA-Z]+ has an unused parameter \$[a-zA-Z]+\.$#'
     - '#^(Function|Method) [a-zA-Z\:]+\(\) return type has no value type specified in iterable type array.$#'
     - '#^Parameter \#1 \.*\$[a-zA-Z]+ of attribute class PhpStaticAnalysis\\Attributes\\[a-zA-Z]+ constructor expects string, int given.$#'
-    - '#^PHPDoc tag @[a-zA-Z]+ has invalid value \(\): Unexpected token "\\n ", expected type at offset [0-9]+$#'
+    - '#^PHPDoc tag @[a-z\-A-Z]+ has invalid value \(\): Unexpected token "\\n ", expected type at offset [0-9]+$#'
     - '#^Attribute class PhpStaticAnalysis\\Attributes\\[a-zA-Z]+ constructor invoked with [0-9]+ parameter(s)?, [0-9]+ required.$#'
     - '#^Attribute class PhpStaticAnalysis\\Attributes\\[a-zA-Z]+ is not repeatable but is already present above the (property|method).$#'

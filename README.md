@@ -100,6 +100,7 @@ These are the available attributes and their corresponding PHPDoc annotations:
 | [Method](doc/Method.md)                               | `@method`                            |
 | [Mixin](doc/Mixin.md)                                 | `@mixin`                             |
 | [Param](doc/Param.md)                                 | `@param`                             |
+| [ParamOut](doc/ParamOut.md)                           | `@param-out`                         |
 | [Property](doc/Property.md)                           | `@property` `@var`                   |
 | [PropertyRead](doc/PropertyRead.md)                   | `@property-read`                     |
 | [PropertyWrite](doc/PropertyWrite.md)                 | `@property-write`                    |
