@@ -17,7 +17,7 @@ use PhpStaticAnalysis\Attributes\IsReadOnly;
 
 class IsReadOnlyExample
 {
-    #[IsReadOnly]
+    #[IsReadOnly] // this property cannot be written to
     public string $name;
     
     ...

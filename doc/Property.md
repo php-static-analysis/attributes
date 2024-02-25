@@ -25,7 +25,7 @@ If the attribute is used as a replacement for the `Type` attribute for a propert
 
 use PhpStaticAnalysis\Attributes\Property;
 
-#[Property(name: 'string')]
+#[Property(name: 'string')] // these properties are available
 #[Property('int $age')]
 #[Property(
     index1: 'string[]',

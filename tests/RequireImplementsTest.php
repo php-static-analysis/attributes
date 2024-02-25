@@ -35,10 +35,10 @@ class RequireImplementsTest extends TestCase implements RequireTestInterface, Re
     }
 }
 
-#[RequireImplements('RequireTestInterface')]
+#[RequireImplements(RequireTestInterface::class)]
 #[RequireImplements(
-    'RequireTestInterface2',
-    'RequireTestInterface3'
+    RequireTestInterface2::class,
+    RequireTestInterface3::class
 )]
 trait RequireInterfaceTrait
 {

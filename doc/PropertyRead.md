@@ -21,7 +21,7 @@ If the class has more than one property that we want to specify, the types for t
 
 use PhpStaticAnalysis\Attributes\PropertyRead;
 
-#[PropertyRead(name: 'string')]
+#[PropertyRead(name: 'string')] // these properties cannot be written to
 #[PropertyRead('int $age')]
 #[PropertyRead(
     index1: 'string[]',

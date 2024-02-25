@@ -21,7 +21,7 @@ use PhpStaticAnalysis\Attributes\Returns;
 
 class ReturnsExample
 {
-    #[Returns('Array<string>')]
+    #[Returns('Array<string>')] // this is the return type
     public function getNames(): array
     {
         return ['Fred', 'John'];

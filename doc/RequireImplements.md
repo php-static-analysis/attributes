@@ -23,7 +23,7 @@ interface RequireInterface
 {
 }
 
-#[RequireImplements('RequireInterface')]
+#[RequireImplements(RequireInterface::class)] //needs to implement this interface
 trait MyTrait
 {
 }

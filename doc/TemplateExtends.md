@@ -19,6 +19,6 @@ use PhpStaticAnalysis\Attributes\TemplateExtends;
 #[Template('T')]
 class ParentClass {}
 
-#[TemplateExtends('ParentClass<int>')]
+#[TemplateExtends('ParentClass<int>')] // type of extended class
 class ChildClass extends ParentClass {}
 ```

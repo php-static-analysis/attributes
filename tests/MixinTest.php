@@ -17,10 +17,10 @@ class C
 {
 }
 
-#[Mixin('A')]
+#[Mixin(A::class)]
 #[Mixin(
-    'B',
-    'C',
+    B::class,
+    C::class,
 )]
 class MixinTest extends TestCase
 {

@@ -23,6 +23,6 @@ use PhpStaticAnalysis\Attributes\TemplateImplements;
 #[Template('T')]
 interface TemplateInterface {}
 
-#[TemplateImplements('TemplateInterface<int>')]
+#[TemplateImplements('TemplateInterface<int>')] // this is the type of the implemented interface
 class MyClass implements TemplateInterface {}
 ```

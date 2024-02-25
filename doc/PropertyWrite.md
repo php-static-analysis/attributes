@@ -21,7 +21,7 @@ If the class has more than one property that we want to specify, the types for t
 
 use PhpStaticAnalysis\Attributes\PropertyWrite;
 
-#[PropertyWrite(name: 'string')]
+#[PropertyWrite(name: 'string')] // these properties cannot be read
 #[PropertyWrite('int $age')]
 #[PropertyWrite(
     index1: 'string[]',

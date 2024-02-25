@@ -19,7 +19,7 @@ If the class has more than one method that we want to specify, the signatures fo
 
 use PhpStaticAnalysis\Attributes\Method;
 
-#[Method('string getString()')]
+#[Method('string getString()')] // these methods are available
 #[Method(
     'void setString(string $text)',
     'static string staticGetter()',

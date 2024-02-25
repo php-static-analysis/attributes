@@ -33,7 +33,7 @@ class RequireParentClass
 {
 }
 
-#[RequireExtends('RequireParentClass')]
+#[RequireExtends(RequireParentClass::class)]
 trait RequireMyTrait
 {
 }

@@ -24,7 +24,7 @@ class A
     }
 }
 
- #[Mixin('A')]
+ #[Mixin(A::class)] // this class proxies A
 class B
 {
     public function doB(): void

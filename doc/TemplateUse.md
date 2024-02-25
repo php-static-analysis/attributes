@@ -25,7 +25,7 @@ use PhpStaticAnalysis\Attributes\TemplateUse;
 #[Template('T')]
 trait TemplateTrait {}
 
-#[TemplateUse('TemplateTrait<int>')]
+#[TemplateUse('TemplateTrait<int>')] // this is the type of the used trait
 class MyClass use TemplateInterface {
     use TemplateTrait;
 }

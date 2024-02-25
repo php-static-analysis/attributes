@@ -18,7 +18,7 @@ use PhpStaticAnalysis\Attributes\RequireExtends;
 abstract class Parent {
 }
 
-#[RequireExtends('ParentClass')]
+#[RequireExtends(Parent::class)] // needs to extend this class
 trait myTrait {
 }
 

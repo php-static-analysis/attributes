@@ -21,7 +21,7 @@ use PhpStaticAnalysis\Attributes\Type;
 
 class TypeExample
 {
-    #[Type('string')]
+    #[Type('string')] // the type of this constant
     public const ATTRIBUTE_NAME = 'Type';
 
     #[Type('Array<int>')]

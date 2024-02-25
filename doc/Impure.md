@@ -17,7 +17,7 @@ class ImpureExample
 {
     public static int $i = 0;
     
-    #[Impure]
+    #[Impure] // this function is impure
     public static function addCumulative(int $left) : int
     {
         self::$i += $left;

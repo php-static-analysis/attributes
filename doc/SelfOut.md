@@ -22,7 +22,7 @@ class SelfOutExample
 {
     #[Template('TItemValue')]
     #[Param(item: 'TItemValue')]
-    #[SelfOut('self<TValue|TItemValue>')]
+    #[SelfOut('self<TValue|TItemValue>')] // this is the new type
 	public function add($item): void
 	{
 	}	

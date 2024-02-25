@@ -116,5 +116,6 @@ These are the available attributes and their corresponding PHPDoc annotations:
 | [TemplateExtends](doc/TemplateExtends.md)             | `@extends` `@template-extends`       |
 | [TemplateImplements](doc/TemplateImplements.md)       | `@implements` `@template-implements` |
 | [TemplateUse](doc/TemplateUse.md)                     | `@use` `@template-use`               |
+| [Throws](doc/Throws.md)                               | `@throws`                            |
 | [Type](doc/Type.md)                                   | `@var` `@return`                     |
 
