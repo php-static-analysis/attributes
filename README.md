@@ -92,27 +92,29 @@ And then install any needed extensions/plugins for the tools that you use.
 
 These are the available attributes and their corresponding PHPDoc annotations:
 
-| Attribute                                             | PHPDoc Annotations                  |
-|-------------------------------------------------------|-------------------------------------|
-| [Deprecated](doc/Deprecated.md)                       | `@deprecated`                       |
-| [Internal](doc/Internal.md)                           | `@internal`                         |
-| [IsReadOnly](doc/IsReadOnly.md)                       | `@readonly`                         |
-| [Method](doc/Method.md)                               | `@method`                           |
-| [Mixin](doc/Mixin.md)                                 | `@mixin`                            |
-| [Param](doc/Param.md)                                 | `@param`                            |
-| [ParamOut](doc/ParamOut.md)                           | `@param-out`                        |
-| [Property](doc/Property.md)                           | `@property` `@var`                  |
-| [PropertyRead](doc/PropertyRead.md)                   | `@property-read`                    |
-| [PropertyWrite](doc/PropertyWrite.md)                 | `@property-write`                   |
-| [RequireExtends](doc/RequireExtends.md)               | `@require-extends`                  |
-| [RequireImplements](doc/RequireImplements.md)         | `@require-implements`               |
-| [Returns](doc/Returns.md)                             | `@return`                           |
-| [SelfOut](doc/SelfOut.md)                             | `@self-out` `@this-out`             |
-| [Template](doc/Template.md)                           | `@template`                         |
-| [TemplateContravariant](doc/TemplateContravariant.md) | `@template-contravariant`           |
-| [TemplateCovariant](doc/TemplateCovariant.md)         | `@template-covariant`               |
-| [TemplateExtends](doc/TemplateExtends.md)             | `@extends` `@template-extends`      |
-| [TemplateImplements](doc/TemplateImplements.md)       | `@implements` `@template-implements`|
-| [TemplateUse](doc/TemplateUse.md)                     | `@use` `@template-use`              |
-| [Type](doc/Type.md)                                   | `@var` `@return`                    |
+| Attribute                                             | PHPDoc Annotations                   |
+|-------------------------------------------------------|--------------------------------------|
+| [Deprecated](doc/Deprecated.md)                       | `@deprecated`                        |
+| [Impure](doc/Impure.md)                               | `@impure`                            |
+| [Internal](doc/Internal.md)                           | `@internal`                          |
+| [IsReadOnly](doc/IsReadOnly.md)                       | `@readonly`                          |
+| [Method](doc/Method.md)                               | `@method`                            |
+| [Mixin](doc/Mixin.md)                                 | `@mixin`                             |
+| [Param](doc/Param.md)                                 | `@param`                             |
+| [ParamOut](doc/ParamOut.md)                           | `@param-out`                         |
+| [Property](doc/Property.md)                           | `@property` `@var`                   |
+| [PropertyRead](doc/PropertyRead.md)                   | `@property-read`                     |
+| [PropertyWrite](doc/PropertyWrite.md)                 | `@property-write`                    |
+| [Pure](doc/Pure.md)                                   | `@pure`                              |
+| [RequireExtends](doc/RequireExtends.md)               | `@require-extends`                   |
+| [RequireImplements](doc/RequireImplements.md)         | `@require-implements`                |
+| [Returns](doc/Returns.md)                             | `@return`                            |
+| [SelfOut](doc/SelfOut.md)                             | `@self-out` `@this-out`              |
+| [Template](doc/Template.md)                           | `@template`                          |
+| [TemplateContravariant](doc/TemplateContravariant.md) | `@template-contravariant`            |
+| [TemplateCovariant](doc/TemplateCovariant.md)         | `@template-covariant`                |
+| [TemplateExtends](doc/TemplateExtends.md)             | `@extends` `@template-extends`       |
+| [TemplateImplements](doc/TemplateImplements.md)       | `@implements` `@template-implements` |
+| [TemplateUse](doc/TemplateUse.md)                     | `@use` `@template-use`               |
+| [Type](doc/Type.md)                                   | `@var` `@return`                     |
 
