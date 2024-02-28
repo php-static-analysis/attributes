@@ -18,16 +18,6 @@ In particular, these repositories are:
 - [Psalm plugin](https://github.com/php-static-analysis/psalm-plugin)
 - [RectorPHP rules to migrate annotations to attributes](https://github.com/php-static-analysis/rector-rule)
 
-## PHPStorm
-A plugin that fully supports these attributes will need to be created. Until this is ready you can get partial support by installing PHPStan, our PHPStan extension and enabling PHPStan support in PHPStorm (as described [here](https://www.jetbrains.com/help/phpstorm/using-phpstan.html)). You will then be able to see errors and messages related to these attributes in your code.
-
-Alternatively install Psalm, our Psalm extension and enable Psalm support in PHPStorm (as described [here](https://www.jetbrains.com/help/phpstorm/using-psalm.html))
-
-## VS Code Support
-An extension that fully supports these attributes will need to be created. Until this is ready you can get partial support by installing PHPStan, our PHPStan extension and a VS Code extension that supports PHPStan (for example [this one](https://github.com/SanderRonde/phpstan-vscode)). When you enable the extension you will be able to see errors and messages related to these attributes in your code.
-
-Alternatively install Psalm, our Psalm extension and a VS Code extension that supports Psam (for example [this one](https://github.com/psalm/psalm-vscode-plugin)) 
-
 ## Example
 
 In order to show how code would look with these attributes, we can look at the following example. This is how a class looks like with the current annotations:
@@ -95,6 +85,7 @@ These are the available attributes and their corresponding PHPDoc annotations:
 | Attribute                                             | PHPDoc Annotations                   |
 |-------------------------------------------------------|--------------------------------------|
 | [Deprecated](doc/Deprecated.md)                       | `@deprecated`                        |
+| [Immutable](doc/Immutable.md)                         | `@immutable`                         |
 | [Impure](doc/Impure.md)                               | `@impure`                            |
 | [Internal](doc/Internal.md)                           | `@internal`                          |
 | [IsReadOnly](doc/IsReadOnly.md)                       | `@readonly`                          |
@@ -118,4 +109,14 @@ These are the available attributes and their corresponding PHPDoc annotations:
 | [TemplateUse](doc/TemplateUse.md)                     | `@use` `@template-use`               |
 | [Throws](doc/Throws.md)                               | `@throws`                            |
 | [Type](doc/Type.md)                                   | `@var` `@return`                     |
+
+## PHPStorm Support
+A plugin that fully supports these attributes will need to be created. Until this is ready you can get partial support by installing PHPStan, our PHPStan extension and enabling PHPStan support in PHPStorm (as described [here](https://www.jetbrains.com/help/phpstorm/using-phpstan.html)). You will then be able to see errors and messages related to these attributes in your code.
+
+Alternatively install Psalm, our Psalm extension and enable Psalm support in PHPStorm (as described [here](https://www.jetbrains.com/help/phpstorm/using-psalm.html))
+
+## VS Code Support
+An extension that fully supports these attributes will need to be created. Until this is ready you can get partial support by installing PHPStan, our PHPStan extension and a VS Code extension that supports PHPStan (for example [this one](https://github.com/SanderRonde/phpstan-vscode)). When you enable the extension you will be able to see errors and messages related to these attributes in your code.
+
+Alternatively install Psalm, our Psalm extension and a VS Code extension that supports Psam (for example [this one](https://github.com/psalm/psalm-vscode-plugin)) 
 
