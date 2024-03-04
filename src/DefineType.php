@@ -8,15 +8,12 @@ use Attribute;
 
 #[Attribute(
     Attribute::TARGET_CLASS |
-    Attribute::TARGET_CLASS_CONSTANT |
-    Attribute::TARGET_PROPERTY |
-    Attribute::TARGET_METHOD |
-    Attribute::TARGET_FUNCTION
+    Attribute::IS_REPEATABLE
 )]
-final class Type
+final class DefineType
 {
     public function __construct(
-        string $type
+        string ...$types
     ) {
     }
 }

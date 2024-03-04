@@ -5,8 +5,12 @@ declare(strict_types=1);
 use PhpStaticAnalysis\Attributes\Type;
 use PHPUnit\Framework\TestCase;
 
+#[Type('FloatArray float[]')]
 class TypeTest extends TestCase
 {
+    #[Type('string')]
+    public const NAME = 'name';
+
     #[Type('string')]
     public string $property;
 
@@ -22,6 +26,18 @@ class TypeTest extends TestCase
     #[Type('string')]
     #[Type('string')]
     public string $propertyWithMultipleTypes;
+
+    public function testClassTemplate(): void
+    {
+        $reflection = new ReflectionClass($this);
+        $this->assertEquals('FloatArray float[]', self::getTypeFromReflection($reflection));
+    }
+
+    public function testClassConstantType(): void
+    {
+        $reflection = new ReflectionClassConstant($this, 'NAME');
+        $this->assertEquals('string', self::getTypeFromReflection($reflection));
+    }
 
     public function testPropertyType(): void
     {
@@ -114,7 +130,7 @@ class TypeTest extends TestCase
     }
 
     public static function getTypeFromReflection(
-        ReflectionProperty | ReflectionMethod | ReflectionFunction $reflection
+        ReflectionProperty | ReflectionClassConstant | ReflectionMethod | ReflectionFunction | ReflectionClass $reflection
     ): string {
         $attributes = $reflection->getAttributes();
         $type = '';

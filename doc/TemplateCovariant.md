@@ -19,7 +19,7 @@ use Exception;
 use PhpStaticAnalysis\Attributes\TemplateCovariant;
 
 #[TemplateCovariant('T')]
-#[TemplateCovariant('T', Exception::class)]
+#[TemplateCovariant('T', of:Exception::class)]
 class TemplateCovariantExample
 {
 }

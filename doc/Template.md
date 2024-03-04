@@ -28,7 +28,7 @@ class TemplateExample
     }
 
     // Type variable with a type
-    #[Template('T', Exception::class)]
+    #[Template('T', of:Exception::class)]
     public function methodWithTemplate(array $param)
     {
     }

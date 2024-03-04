@@ -8,7 +8,7 @@
 
 Since the release of PHP 8.0 more and more libraries, frameworks and tools have been updated to use attributes instead of annotations in PHPDocs.
 
-However, static analysis tools like PHPStan or Psalm or IDEs like PHPStorm or VS Code have not made this transition to attributes and they still rely on annotations in PHPDocs for a lot of their functionality.
+However, static analysis tools like PHPStan or Psalm or IDEs like PhpStorm or VS Code have not made this transition to attributes and they still rely on annotations in PHPDocs for a lot of their functionality.
 
 This library aims to provide a set of PHP attributes which could replace the most commonly used annotations accepted by these tools and will aim to provide related repositories with the extensions or plugins that would allow these attributes to be used in these tools.
 
@@ -84,8 +84,10 @@ These are the available attributes and their corresponding PHPDoc annotations:
 
 | Attribute                                             | PHPDoc Annotations                   |
 |-------------------------------------------------------|--------------------------------------|
+| [DefineType](doc/DefineType.md)                       | `@type`                              |
 | [Deprecated](doc/Deprecated.md)                       | `@deprecated`                        |
 | [Immutable](doc/Immutable.md)                         | `@immutable`                         |
+| [ImportType](doc/ImportType.md)                       | `@import-type`                       |
 | [Impure](doc/Impure.md)                               | `@impure`                            |
 | [Internal](doc/Internal.md)                           | `@internal`                          |
 | [IsReadOnly](doc/IsReadOnly.md)                       | `@readonly`                          |
@@ -108,12 +110,12 @@ These are the available attributes and their corresponding PHPDoc annotations:
 | [TemplateImplements](doc/TemplateImplements.md)       | `@implements` `@template-implements` |
 | [TemplateUse](doc/TemplateUse.md)                     | `@use` `@template-use`               |
 | [Throws](doc/Throws.md)                               | `@throws`                            |
-| [Type](doc/Type.md)                                   | `@var` `@return`                     |
+| [Type](doc/Type.md)                                   | `@var` `@return` `@type`             |
 
-## PHPStorm Support
-A plugin that fully supports these attributes will need to be created. Until this is ready you can get partial support by installing PHPStan, our PHPStan extension and enabling PHPStan support in PHPStorm (as described [here](https://www.jetbrains.com/help/phpstorm/using-phpstan.html)). You will then be able to see errors and messages related to these attributes in your code.
+## PhpStorm Support
+A plugin that fully supports these attributes will need to be created. Until this is ready you can get partial support by installing PHPStan, our PHPStan extension and enabling PHPStan support in PhpStorm (as described [here](https://www.jetbrains.com/help/phpstorm/using-phpstan.html)). You will then be able to see errors and messages related to these attributes in your code.
 
-Alternatively install Psalm, our Psalm extension and enable Psalm support in PHPStorm (as described [here](https://www.jetbrains.com/help/phpstorm/using-psalm.html))
+Alternatively install Psalm, our Psalm extension and enable Psalm support in PhpStorm (as described [here](https://www.jetbrains.com/help/phpstorm/using-psalm.html))
 
 ## VS Code Support
 An extension that fully supports these attributes will need to be created. Until this is ready you can get partial support by installing PHPStan, our PHPStan extension and a VS Code extension that supports PHPStan (for example [this one](https://github.com/SanderRonde/phpstan-vscode)). When you enable the extension you will be able to see errors and messages related to these attributes in your code.

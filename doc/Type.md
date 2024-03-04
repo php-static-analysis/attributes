@@ -6,11 +6,15 @@ We could not use `Var` for the name of this attribute because `var` is a reserve
 
 This attribute can also be used instead of using the `Returns` attribute to specify the type of the return value of a function or method, replacing the `@return` annotation.
 
+This attribute can also be used instead of using the `DefineType` attribute to specify an alias for a type, replacing the `@type` annotation.
+
 ## Arguments
 
 The attribute accepts a string which describes the type of the class property, constant or return value. The attribute itself does not have a knowledge of which types are valid and which are not and this will depend on the implementation for each particular tool.
 
 We expect that the attribute will be able to accept both basic types like `string` or `array` and more advanced types like `array<string>` or `Collection<int>`. We aim to accept all the types accepted by static analysis tools for the `@var` annotation.
+
+If used to replace the `@type` tag, the value should be a string that includes both the name of the alias and the type being aliased.
 
 ## Example usage
 
@@ -19,6 +23,7 @@ We expect that the attribute will be able to accept both basic types like `strin
 
 use PhpStaticAnalysis\Attributes\Type;
 
+#[Type('FloatArray float[]')]
 class TypeExample
 {
     #[Type('string')] // the type of this constant

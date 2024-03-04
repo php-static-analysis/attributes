@@ -19,7 +19,7 @@ use Exception;
 use PhpStaticAnalysis\Attributes\TemplateContravariant;
 
 #[TemplateContravariant('T')]
-#[TemplateContravariant('T', Exception::class)]
+#[TemplateContravariant('T', of:Exception::class)]
 class TemplateContravariantExample
 {
 }
