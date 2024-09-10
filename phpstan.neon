@@ -5,7 +5,6 @@ parameters:
     - tests
     featureToggles:
         readOnlyByPhpDoc: true
-    checkGenericClassInNonGenericObjectType: false
 
     ignoreErrors:
     - '#^Constructor of class PhpStaticAnalysis\\Attributes\\[a-zA-Z]+ has an unused parameter \$[a-zA-Z]+\.$#'
@@ -14,3 +13,5 @@ parameters:
     - '#^PHPDoc tag @[a-z\-A-Z]+ has invalid value \(\): Unexpected token "\\n ", expected type at offset [0-9]+$#'
     - '#^Attribute class PhpStaticAnalysis\\Attributes\\[a-zA-Z]+ constructor invoked with [0-9]+ parameter(s)?, [0-9]+ required.$#'
     - '#^Attribute class PhpStaticAnalysis\\Attributes\\[a-zA-Z]+ is not repeatable but is already present above the (property|method).$#'
+    - '#^Method [a-zA-Z\:]+\(\) has parameter \$[a-zA-Z]+ with generic class [a-zA-Z]+ but does not specify its types: [a-zA-Z]+$#'
+    - '#^PHPDoc tag @phpstan-self-out contains generic type [a-zA-Z]+<[a-zA-Z]+> but class [a-zA-Z]+ is not generic.$#'

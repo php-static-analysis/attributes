@@ -2,7 +2,6 @@
 
 [![Continuous Integration](https://github.com/php-static-analysis/attributes/workflows/All%20Tests/badge.svg)](https://github.com/php-static-analysis/attributes/actions)
 [![Latest Stable Version](https://poser.pugx.org/php-static-analysis/attributes/v/stable)](https://packagist.org/packages/php-static-analysis/attributes)
-[![PHP Version Require](http://poser.pugx.org/php-static-analysis/attributes/require/php)](https://packagist.org/packages/php-static-analysis/attributes)
 [![License](https://poser.pugx.org/php-static-analysis/attributes/license)](https://github.com/php-static-analysis/attributes/blob/main/LICENSE)
 [![Total Downloads](https://poser.pugx.org/php-static-analysis/attributes/downloads)](https://packagist.org/packages/php-static-analysis/attributes/stats)
 
@@ -120,5 +119,9 @@ Alternatively install Psalm, our Psalm extension and enable Psalm support in Php
 ## VS Code Support
 An extension that fully supports these attributes will need to be created. Until this is ready you can get partial support by installing PHPStan, our PHPStan extension and a VS Code extension that supports PHPStan (for example [this one](https://github.com/SanderRonde/phpstan-vscode)). When you enable the extension you will be able to see errors and messages related to these attributes in your code.
 
-Alternatively install Psalm, our Psalm extension and a VS Code extension that supports Psam (for example [this one](https://github.com/psalm/psalm-vscode-plugin)) 
+Alternatively install Psalm, our Psalm extension and a VS Code extension that supports Psam (for example [this one](https://github.com/psalm/psalm-vscode-plugin))
+
+## Sponsor this project
+
+If you would like to support the development of this project, please consider [sponsoring me](https://github.com/sponsors/carlos-granados)
 
