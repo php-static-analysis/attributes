@@ -83,6 +83,9 @@ These are the available attributes and their corresponding PHPDoc annotations:
 
 | Attribute                                             | PHPDoc Annotations                   |
 |-------------------------------------------------------|--------------------------------------|
+| [Assert](doc/Assert.md)                               | `@assert`                            |
+| [AssertIfFalse](doc/AssertIfFalse.md)                 | `@assert-if-false`                   |
+| [AssertIfTrue](doc/AssertIfTrue.md)                   | `@assert-if-true`                    |
 | [DefineType](doc/DefineType.md)                       | `@type`                              |
 | [Deprecated](doc/Deprecated.md)                       | `@deprecated`                        |
 | [Immutable](doc/Immutable.md)                         | `@immutable`                         |
