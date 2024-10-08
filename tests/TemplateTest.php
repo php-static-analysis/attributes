@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use PhpStaticAnalysis\Attributes\Param;
 use PhpStaticAnalysis\Attributes\Template;
+use PhpStaticAnalysis\Attributes\TemplateUse;
 use PHPUnit\Framework\TestCase;
 
 #[Template('TClass')]
@@ -103,8 +104,11 @@ class TemplateTest extends TestCase
                 $attribute->newInstance();
                 $templateData = $attribute->getArguments();
                 $templateValue = $templateData[0];
-                if (isset($templateData[1]) && $templateData[1] !== null) {
-                    $templateValue .= ' of ' . $templateData[1];
+                assert(is_string($templateValue));
+                if (isset($templateData[1])) {
+                    $className = $templateData[1];
+                    assert(is_string($className));
+                    $templateValue .= ' of ' . $className;
                 }
                 $templates[] = $templateValue;
             }
@@ -123,6 +127,13 @@ trait TemplateTestTrait
 interface TemplateTestInterface
 {
 }
+
+#[TemplateUse('TemplateTestTrait<string>')]
+class TemplateClass
+{
+    use TemplateTestTrait;
+}
+
 
 #[Template('TFunction')]
 #[Param(param: 'TFunction')]

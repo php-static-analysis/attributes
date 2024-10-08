@@ -22,6 +22,7 @@ class RequireExtendsTest extends TestCase
             if ($attribute->getName() === RequireExtends::class) {
                 $attribute->newInstance();
                 $extends = $attribute->getArguments()[0];
+                assert(is_string($extends));
             }
         }
 

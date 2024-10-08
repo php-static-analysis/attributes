@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use PhpStaticAnalysis\Attributes\TemplateCovariant;
+use PhpStaticAnalysis\Attributes\TemplateUse;
 use PHPUnit\Framework\TestCase;
 
 #[TemplateCovariant('TClass', Exception::class)]
@@ -36,8 +37,11 @@ class TemplateCovariantTest extends TestCase
                 $attribute->newInstance();
                 $templateData = $attribute->getArguments();
                 $templateValue = $templateData[0];
-                if (isset($templateData[1]) && $templateData[1] !== null) {
-                    $templateValue .= ' of ' . $templateData[1];
+                assert(is_string($templateValue));
+                if (isset($templateData[1])) {
+                    $className = $templateData[1];
+                    assert(is_string($className));
+                    $templateValue .= ' of ' . $className;
                 }
                 $templates[] = $templateValue;
             }
@@ -55,4 +59,10 @@ trait TemplateCovariantTestTrait
 #[TemplateCovariant('TInterface')]
 interface TemplateCovariantTestInterface
 {
+}
+
+#[TemplateUse('TemplateCovariantTestTrait<string>')]
+class CovariantClass
+{
+    use TemplateCovariantTestTrait;
 }

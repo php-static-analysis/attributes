@@ -3,8 +3,10 @@
 declare(strict_types=1);
 
 use PhpStaticAnalysis\Attributes\SelfOut;
+use PhpStaticAnalysis\Attributes\Template;
 use PHPUnit\Framework\TestCase;
 
+#[Template('T')]
 class SelfOutTest extends TestCase
 {
     public function testMethodSelfOut(): void
@@ -84,6 +86,7 @@ class SelfOutTest extends TestCase
             if ($attribute->getName() === SelfOut::class) {
                 $attribute->newInstance();
                 $selfOut = $attribute->getArguments()[0];
+                assert(is_string($selfOut));
             }
         }
 
