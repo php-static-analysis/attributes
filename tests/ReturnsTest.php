@@ -95,6 +95,7 @@ class ReturnsTest extends TestCase
             if ($attribute->getName() === Returns::class) {
                 $attribute->newInstance();
                 $returns = $attribute->getArguments()[0];
+                assert(is_string($returns));
             }
         }
 

@@ -23,6 +23,7 @@ class TemplateExtendsTest extends TestCase
             if ($attribute->getName() === TemplateExtends::class) {
                 $attribute->newInstance();
                 $extends = $attribute->getArguments()[0];
+                assert(is_string($extends));
             }
         }
 

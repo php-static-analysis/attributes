@@ -16,7 +16,7 @@ use Attribute;
 final class Internal
 {
     public function __construct(
-        string $namespace = null
+        ?string $namespace = null
     ) {
     }
 }

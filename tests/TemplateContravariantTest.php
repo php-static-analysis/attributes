@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use PhpStaticAnalysis\Attributes\TemplateContravariant;
+use PhpStaticAnalysis\Attributes\TemplateUse;
 use PHPUnit\Framework\TestCase;
 
 #[TemplateContravariant('TClass', Exception::class)]
@@ -36,8 +37,11 @@ class TemplateContravariantTest extends TestCase
                 $attribute->newInstance();
                 $templateData = $attribute->getArguments();
                 $templateValue = $templateData[0];
-                if (isset($templateData[1]) && $templateData[1] !== null) {
-                    $templateValue .= ' of ' . $templateData[1];
+                assert(is_string($templateValue));
+                if (isset($templateData[1])) {
+                    $className = $templateData[1];
+                    assert(is_string($className));
+                    $templateValue .= ' of ' . $className;
                 }
                 $templates[] = $templateValue;
             }
@@ -55,4 +59,10 @@ trait TemplateContravariantTestTrait
 #[TemplateContravariant('TInterface')]
 interface TemplateContravariantTestInterface
 {
+}
+
+#[TemplateUse('TemplateContravariantTestTrait<string>')]
+class ContravariantClass
+{
+    use TemplateContravariantTestTrait;
 }

@@ -3,15 +3,61 @@ parameters:
     paths:
     - src
     - tests
-    featureToggles:
-        readOnlyByPhpDoc: true
 
     ignoreErrors:
-    - '#^Constructor of class PhpStaticAnalysis\\Attributes\\[a-zA-Z]+ has an unused parameter \$[a-zA-Z]+\.$#'
-    - '#^(Function|Method) [a-zA-Z\:]+\(\) return type has no value type specified in iterable type array.$#'
-    - '#^Parameter \#1 \.*\$[a-zA-Z]+ of attribute class PhpStaticAnalysis\\Attributes\\[a-zA-Z]+ constructor expects string, int given.$#'
-    - '#^PHPDoc tag @[a-z\-A-Z]+ has invalid value \(\): Unexpected token "\\n ", expected type at offset [0-9]+$#'
-    - '#^Attribute class PhpStaticAnalysis\\Attributes\\[a-zA-Z]+ constructor invoked with [0-9]+ parameter(s)?, [0-9]+ required.$#'
-    - '#^Attribute class PhpStaticAnalysis\\Attributes\\[a-zA-Z]+ is not repeatable but is already present above the (property|method).$#'
-    - '#^Method [a-zA-Z\:]+\(\) has parameter \$[a-zA-Z]+ with generic class [a-zA-Z]+ but does not specify its types: [a-zA-Z]+$#'
-    - '#^PHPDoc tag @phpstan-self-out contains generic type [a-zA-Z]+<[a-zA-Z]+> but class [a-zA-Z]+ is not generic.$#'
+        -
+            identifier: method.impossibleType
+            paths:
+                - tests/AssertIfFalseTest.php
+
+        -
+            identifier: function.impossibleType
+            paths:
+                - tests/AssertIfFalseTest.php
+
+        -
+            identifier: assert.alreadyNarrowedType
+            paths:
+                - tests/AssertIfFalseTest.php
+                - tests/AssertIfTrueTest.php
+                - tests/AssertTest.php
+
+        -
+            identifier: method.alreadyNarrowedType
+            paths:
+                - tests/AssertIfTrueTest.php
+
+        -
+            identifier: function.alreadyNarrowedType
+            paths:
+                - tests/AssertIfTrueTest.php
+
+        -
+            identifier: constructor.unusedParameter
+            paths:
+                - src/*
+
+        -
+            identifier: missingType.iterableValue
+            paths:
+                - tests/*
+
+        -
+            identifier: missingType.generics
+            paths:
+                - tests/*
+
+        -
+            identifier: phpDoc.parseError
+            paths:
+                - tests/*
+
+        -
+            identifier: possiblyImpure.methodCall
+            paths:
+                - tests/PureTest.php
+
+        -
+            identifier: possiblyImpure.new
+            paths:
+                - tests/PureTest.php

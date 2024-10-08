@@ -107,3 +107,8 @@ function functionDeprecated(): bool
     $reflection = new ReflectionFunction(__FUNCTION__);
     return DeprecatedTest::getDeprecatedFromReflection($reflection);
 }
+
+class DeprecatedClass
+{
+    use DeprecatedTestTrait;
+}

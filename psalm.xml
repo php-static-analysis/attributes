@@ -10,9 +10,6 @@
 >
     <projectFiles>
         <directory name="src" />
-        <ignoreFiles>
-            <directory name="vendor" />
-        </ignoreFiles>
     </projectFiles>
     <plugins>
         <pluginClass class="PhpStaticAnalysis\PsalmPlugin\Plugin" />

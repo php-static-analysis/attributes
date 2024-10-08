@@ -51,3 +51,8 @@ trait ImmutableTestTrait
 interface ImmutableTestInterface
 {
 }
+
+class ImmutableClass
+{
+    use ImmutableTestTrait;
+}

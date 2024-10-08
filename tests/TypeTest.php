@@ -138,6 +138,7 @@ class TypeTest extends TestCase
             if ($attribute->getName() === Type::class) {
                 $attribute->newInstance();
                 $type = $attribute->getArguments()[0];
+                assert(is_string($type));
             }
         }
 
