@@ -4,7 +4,7 @@ This attribute is the equivalent of the `@return` annotation. It can be used on 
 
 We could not use `Return` for the name of this attribute because `return` is a reserved word in PHP.
 
-Instead of using this attribute, you can also use the `Type` aatribute which provides equivalent functionality.
+Instead of using this attribute, you can also use the `Type` attribute which provides equivalent functionality.
 
 ## Arguments
 

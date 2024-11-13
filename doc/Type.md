@@ -50,4 +50,4 @@ This attribute can only be used to specify a type for class properties or class 
     $result = $this->getResult();
 ```
 
-This is because PHP attributes cannot be applied to arbitraty code, they can only be applied to specific targets like classes, functions, methods or properties. So the `@var` annotation might still be needed. However, if your code has good type coverage, ideally you should never need to use this kind of annotation.
+This is because PHP attributes cannot be applied to arbitrary code, they can only be applied to specific targets like classes, functions, methods or properties. So the `@var` annotation might still be needed. However, if your code has good type coverage, ideally you should never need to use this kind of annotation.
