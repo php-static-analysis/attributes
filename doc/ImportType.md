@@ -4,7 +4,7 @@ This attribute is the equivalent of the `@import-type` annotation and is used to
 
 ## Arguments
 
-The attribute accepts one or more strings which list the class from which the aliased type neeeds to be imported. The attribute itself does not have a knowledge of which types are valid and which are not and this will depend on the implementation for each particular tool.
+The attribute accepts one or more strings which list the class from which the aliased type needs to be imported. The attribute itself does not have a knowledge of which types are valid and which are not and this will depend on the implementation for each particular tool.
 
 The arguments can be named arguments and the type is aliased with the name of the argument and the value is the name of the class from which it needs to be imported.
 

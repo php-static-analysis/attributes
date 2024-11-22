@@ -33,7 +33,7 @@ class TemplateExample
     {
     }
 
-    // Multiple type varibles listed in multiple attributes
+    // Multiple type variables listed in multiple attributes
     #[Template('T1')]
     #[Template('T2')]
     public function multipleMethodTemplates(array $param1, array $param2)
