@@ -14,6 +14,3 @@ parameters:
     - '#^PHPDoc tag @[a-z\-A-Z]+ has invalid value \(\): Unexpected token "\\n ", expected type at offset [0-9]+( on line [0-9]+)?$#'
     - '#^Possibly impure call to method [a-z\-A-Z]+::[a-z\-A-Z]+\(\) in pure (method|function) ([a-z\-A-Z]+::)?[a-z\-A-Z]+\(\).?$#'
     - '#^Possibly impure instantiation of class [a-z\-A-Z]+ in pure function [a-z\-A-Z]+\(\).?$#'
-
-includes:
-	- vendor/phpstan/phpstan/conf/bleedingEdge.neon
