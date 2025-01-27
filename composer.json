@@ -20,14 +20,14 @@
         "php": ">=8.1"
     },
     "require-dev": {
-        "php-static-analysis/node-visitor": "^0.4.0 || dev-main",
-        "php-static-analysis/phpstan-extension": "^0.4.0 || dev-main",
-        "php-static-analysis/psalm-plugin": "^0.4.0 || dev-main",
+        "php-static-analysis/node-visitor": "^0.4.1 || dev-main",
+        "php-static-analysis/phpstan-extension": "^0.4.1 || dev-main",
+        "php-static-analysis/psalm-plugin": "^0.4.1 || dev-main",
         "phpstan/extension-installer": "^1.3",
         "phpstan/phpstan": "^2.0",
         "phpunit/phpunit": "^9.0",
         "symplify/easy-coding-standard": "^12.1",
-        "vimeo/psalm": "dev-master"
+        "vimeo/psalm": "^6"
     },
     "scripts": {
         "phpstan": "phpstan analyse",
