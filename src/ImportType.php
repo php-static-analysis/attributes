@@ -12,8 +12,13 @@ use Attribute;
 )]
 final class ImportType
 {
-    public function __construct(
-        string ...$from
-    ) {
+    /**
+     * @var string[]
+     */
+    public readonly array $from;
+
+    public function __construct(string ...$from)
+    {
+        $this->from = $from;
     }
 }

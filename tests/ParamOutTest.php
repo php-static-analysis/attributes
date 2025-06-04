@@ -115,8 +115,9 @@ class ParamOutTest extends TestCase
         $paramOuts = [];
         foreach ($attributes as $attribute) {
             if ($attribute->getName() === ParamOut::class) {
-                $attribute->newInstance();
-                $paramOuts = array_merge($paramOuts, $attribute->getArguments());
+                $instance = $attribute->newInstance();
+                assert($instance instanceof ParamOut);
+                $paramOuts = array_merge($paramOuts, $instance->params);
             }
         }
 
@@ -125,11 +126,10 @@ class ParamOutTest extends TestCase
             $attributes = $parameter->getAttributes();
             foreach ($attributes as $attribute) {
                 if ($attribute->getName() === ParamOut::class) {
-                    $attribute->newInstance();
-                    $arguments = $attribute->getArguments();
-                    $argument = $arguments[array_key_first($arguments)];
+                    $instance = $attribute->newInstance();
+                    assert($instance instanceof ParamOut);
+                    $argument = $instance->params[array_key_first($instance->params)];
                     $paramOuts[$parameter->name] = $argument;
-                    ;
                 }
             }
         }

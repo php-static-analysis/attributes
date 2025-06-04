@@ -45,8 +45,9 @@ class TemplateImplementsTest extends TestCase implements TestInterface, TestInte
         $implements = [];
         foreach ($attributes as $attribute) {
             if ($attribute->getName() === TemplateImplements::class) {
-                $attribute->newInstance();
-                $implements = array_merge($implements, $attribute->getArguments());
+                $instance = $attribute->newInstance();
+                assert($instance instanceof TemplateImplements);
+                $implements = array_merge($implements, $instance->interfaces);
             }
         }
 

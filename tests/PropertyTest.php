@@ -40,8 +40,9 @@ class PropertyTest extends TestCase
         $properties = [];
         foreach ($attributes as $attribute) {
             if ($attribute->getName() === Property::class) {
-                $attribute->newInstance();
-                $properties = array_merge($properties, $attribute->getArguments());
+                $instance = $attribute->newInstance();
+                assert($instance instanceof Property);
+                $properties = array_merge($properties, $instance->properties);
             }
         }
 

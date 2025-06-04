@@ -119,8 +119,9 @@ class AssertIfFalseTest extends TestCase
         $asserts = [];
         foreach ($attributes as $attribute) {
             if ($attribute->getName() === AssertIfFalse::class) {
-                $attribute->newInstance();
-                $asserts = array_merge($asserts, $attribute->getArguments());
+                $instance = $attribute->newInstance();
+                assert($instance instanceof AssertIfFalse);
+                $asserts = array_merge($asserts, $instance->params);
             }
         }
 
@@ -129,11 +130,10 @@ class AssertIfFalseTest extends TestCase
             $attributes = $parameter->getAttributes();
             foreach ($attributes as $attribute) {
                 if ($attribute->getName() === AssertIfFalse::class) {
-                    $attribute->newInstance();
-                    $arguments = $attribute->getArguments();
-                    $argument = $arguments[array_key_first($arguments)];
+                    $instance = $attribute->newInstance();
+                    assert($instance instanceof AssertIfFalse);
+                    $argument = $instance->params[array_key_first($instance->params)];
                     $asserts[$parameter->name] = $argument;
-                    ;
                 }
             }
         }

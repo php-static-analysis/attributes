@@ -136,9 +136,9 @@ class TypeTest extends TestCase
         $type = '';
         foreach ($attributes as $attribute) {
             if ($attribute->getName() === Type::class) {
-                $attribute->newInstance();
-                $type = $attribute->getArguments()[0];
-                assert(is_string($type));
+                $instance = $attribute->newInstance();
+                assert($instance instanceof Type);
+                $type = $instance->type;
             }
         }
 

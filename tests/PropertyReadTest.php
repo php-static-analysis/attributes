@@ -31,8 +31,9 @@ class PropertyReadTest extends TestCase
         $properties = [];
         foreach ($attributes as $attribute) {
             if ($attribute->getName() === PropertyRead::class) {
-                $attribute->newInstance();
-                $properties = array_merge($properties, $attribute->getArguments());
+                $instance = $attribute->newInstance();
+                assert($instance instanceof PropertyRead);
+                $properties = array_merge($properties, $instance->properties);
             }
         }
 

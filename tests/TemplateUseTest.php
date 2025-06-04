@@ -47,8 +47,9 @@ class TemplateUseTest extends TestCase
         $uses = [];
         foreach ($attributes as $attribute) {
             if ($attribute->getName() === TemplateUse::class) {
-                $attribute->newInstance();
-                $uses = array_merge($uses, $attribute->getArguments());
+                $instance = $attribute->newInstance();
+                assert($instance instanceof TemplateUse);
+                $uses = array_merge($uses, $instance->traits);
             }
         }
 

@@ -37,8 +37,9 @@ class MixinTest extends TestCase
         $mixins = [];
         foreach ($attributes as $attribute) {
             if ($attribute->getName() === Mixin::class) {
-                $attribute->newInstance();
-                $mixins = array_merge($mixins, $attribute->getArguments());
+                $instance = $attribute->newInstance();
+                assert($instance instanceof Mixin);
+                $mixins = array_merge($mixins, $instance->classes);
             }
         }
 

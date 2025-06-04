@@ -84,9 +84,9 @@ class SelfOutTest extends TestCase
         $selfOut = '';
         foreach ($attributes as $attribute) {
             if ($attribute->getName() === SelfOut::class) {
-                $attribute->newInstance();
-                $selfOut = $attribute->getArguments()[0];
-                assert(is_string($selfOut));
+                $instance = $attribute->newInstance();
+                assert($instance instanceof SelfOut);
+                $selfOut = $instance->type;
             }
         }
 

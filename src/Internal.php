@@ -15,8 +15,7 @@ use Attribute;
 )]
 final class Internal
 {
-    public function __construct(
-        ?string $namespace = null
-    ) {
+    public function __construct(public readonly ?string $namespace = null)
+    {
     }
 }

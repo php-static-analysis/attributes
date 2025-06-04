@@ -14,8 +14,13 @@ use Attribute;
 )]
 final class AssertIfFalse
 {
-    public function __construct(
-        string ...$params
-    ) {
+    /**
+     * @var string[]
+     */
+    public readonly array $params;
+
+    public function __construct(string ...$params)
+    {
+        $this->params = $params;
     }
 }

@@ -34,14 +34,11 @@ class TemplateContravariantTest extends TestCase
         $templates = [];
         foreach ($attributes as $attribute) {
             if ($attribute->getName() === TemplateContravariant::class) {
-                $attribute->newInstance();
-                $templateData = $attribute->getArguments();
-                $templateValue = $templateData[0];
-                assert(is_string($templateValue));
-                if (isset($templateData[1])) {
-                    $className = $templateData[1];
-                    assert(is_string($className));
-                    $templateValue .= ' of ' . $className;
+                $instance = $attribute->newInstance();
+                assert($instance instanceof TemplateContravariant);
+                $templateValue = $instance->name;
+                if ($instance->of !== null) {
+                    $templateValue .= ' of ' . $instance->of;
                 }
                 $templates[] = $templateValue;
             }
