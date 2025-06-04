@@ -13,8 +13,13 @@ use Attribute;
 )]
 final class Throws
 {
-    public function __construct(
-        string ...$exceptions
-    ) {
+    /**
+     * @var string[]
+     */
+    public readonly array $exceptions;
+
+    public function __construct(string ...$exceptions)
+    {
+        $this->exceptions = $exceptions;
     }
 }

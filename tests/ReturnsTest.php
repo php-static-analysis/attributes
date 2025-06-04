@@ -93,9 +93,9 @@ class ReturnsTest extends TestCase
         $returns = '';
         foreach ($attributes as $attribute) {
             if ($attribute->getName() === Returns::class) {
-                $attribute->newInstance();
-                $returns = $attribute->getArguments()[0];
-                assert(is_string($returns));
+                $instance = $attribute->newInstance();
+                assert($instance instanceof Returns);
+                $returns = $instance->type;
             }
         }
 

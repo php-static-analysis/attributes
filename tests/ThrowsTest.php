@@ -85,8 +85,9 @@ class ThrowsTest extends TestCase
         $throwss = [];
         foreach ($attributes as $attribute) {
             if ($attribute->getName() === Throws::class) {
-                $attribute->newInstance();
-                $throwss = array_merge($throwss, $attribute->getArguments());
+                $instance = $attribute->newInstance();
+                assert($instance instanceof Throws);
+                $throwss = array_merge($throwss, $instance->exceptions);
             }
         }
 

@@ -15,8 +15,7 @@ use Attribute;
 )]
 final class Type
 {
-    public function __construct(
-        string $type
-    ) {
+    public function __construct(public readonly string $type)
+    {
     }
 }

@@ -20,9 +20,9 @@ class RequireExtendsTest extends TestCase
         $extends = '';
         foreach ($attributes as $attribute) {
             if ($attribute->getName() === RequireExtends::class) {
-                $attribute->newInstance();
-                $extends = $attribute->getArguments()[0];
-                assert(is_string($extends));
+                $instance = $attribute->newInstance();
+                assert($instance instanceof RequireExtends);
+                $extends = $instance->class;
             }
         }
 

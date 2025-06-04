@@ -13,8 +13,13 @@ use Attribute;
 )]
 final class Property
 {
-    public function __construct(
-        string ...$properties
-    ) {
+    /**
+     * @var string[]
+     */
+    public readonly array $properties;
+
+    public function __construct(string ...$properties)
+    {
+        $this->properties = $properties;
     }
 }

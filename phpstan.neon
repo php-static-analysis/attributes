@@ -32,10 +32,6 @@ parameters:
             paths:
                 - tests/AssertIfTrueTest.php
 
-        -
-            identifier: constructor.unusedParameter
-            paths:
-                - src/*
 
         -
             identifier: missingType.iterableValue

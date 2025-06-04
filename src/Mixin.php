@@ -12,8 +12,13 @@ use Attribute;
 )]
 final class Mixin
 {
-    public function __construct(
-        string ...$classes
-    ) {
+    /**
+     * @var string[]
+     */
+    public readonly array $classes;
+
+    public function __construct(string ...$classes)
+    {
+        $this->classes = $classes;
     }
 }

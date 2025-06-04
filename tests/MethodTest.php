@@ -29,8 +29,9 @@ class MethodTest extends TestCase
         $methods = [];
         foreach ($attributes as $attribute) {
             if ($attribute->getName() === Method::class) {
-                $attribute->newInstance();
-                $methods = array_merge($methods, $attribute->getArguments());
+                $instance = $attribute->newInstance();
+                assert($instance instanceof Method);
+                $methods = array_merge($methods, $instance->methods);
             }
         }
 

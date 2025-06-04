@@ -12,8 +12,13 @@ use Attribute;
 )]
 final class TemplateUse
 {
-    public function __construct(
-        string ...$traits
-    ) {
+    /**
+     * @var string[]
+     */
+    public readonly array $traits;
+
+    public function __construct(string ...$traits)
+    {
+        $this->traits = $traits;
     }
 }

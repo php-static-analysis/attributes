@@ -13,8 +13,8 @@ use Attribute;
 final class TemplateCovariant
 {
     public function __construct(
-        string $name,
-        ?string $of = null
+        public readonly string $name,
+        public readonly ?string $of = null,
     ) {
     }
 }

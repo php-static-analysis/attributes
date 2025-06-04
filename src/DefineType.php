@@ -12,8 +12,13 @@ use Attribute;
 )]
 final class DefineType
 {
-    public function __construct(
-        string ...$types
-    ) {
+    /**
+     * @var string[]
+     */
+    public readonly array $types;
+
+    public function __construct(string ...$types)
+    {
+        $this->types = $types;
     }
 }

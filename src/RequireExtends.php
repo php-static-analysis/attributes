@@ -11,8 +11,7 @@ use Attribute;
 )]
 final class RequireExtends
 {
-    public function __construct(
-        string $class
-    ) {
+    public function __construct(public readonly string $class)
+    {
     }
 }

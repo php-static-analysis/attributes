@@ -31,8 +31,9 @@ class DefineTypeTest extends TestCase
         $properties = [];
         foreach ($attributes as $attribute) {
             if ($attribute->getName() === DefineType::class) {
-                $attribute->newInstance();
-                $properties = array_merge($properties, $attribute->getArguments());
+                $instance = $attribute->newInstance();
+                assert($instance instanceof DefineType);
+                $properties = array_merge($properties, $instance->types);
             }
         }
 

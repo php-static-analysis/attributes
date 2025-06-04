@@ -31,8 +31,9 @@ class PropertyWriteTest extends TestCase
         $properties = [];
         foreach ($attributes as $attribute) {
             if ($attribute->getName() === PropertyWrite::class) {
-                $attribute->newInstance();
-                $properties = array_merge($properties, $attribute->getArguments());
+                $instance = $attribute->newInstance();
+                assert($instance instanceof PropertyWrite);
+                $properties = array_merge($properties, $instance->properties);
             }
         }
 

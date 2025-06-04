@@ -12,8 +12,13 @@ use Attribute;
 )]
 final class Method
 {
-    public function __construct(
-        string ...$methods
-    ) {
+    /**
+     * @var string[]
+     */
+    public readonly array $methods;
+
+    public function __construct(string ...$methods)
+    {
+        $this->methods = $methods;
     }
 }

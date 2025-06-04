@@ -26,8 +26,9 @@ class RequireImplementsTest extends TestCase implements RequireTestInterface, Re
         $implements = [];
         foreach ($attributes as $attribute) {
             if ($attribute->getName() === RequireImplements::class) {
-                $attribute->newInstance();
-                $implements = array_merge($implements, $attribute->getArguments());
+                $instance = $attribute->newInstance();
+                assert($instance instanceof RequireImplements);
+                $implements = array_merge($implements, $instance->interfaces);
             }
         }
 

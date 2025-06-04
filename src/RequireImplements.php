@@ -12,8 +12,13 @@ use Attribute;
 )]
 final class RequireImplements
 {
-    public function __construct(
-        string ...$interfaces
-    ) {
+    /**
+     * @var string[]
+     */
+    public readonly array $interfaces;
+
+    public function __construct(string ...$interfaces)
+    {
+        $this->interfaces = $interfaces;
     }
 }

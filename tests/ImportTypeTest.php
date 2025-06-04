@@ -32,8 +32,9 @@ class ImportTypeTest extends TestCase
         $properties = [];
         foreach ($attributes as $attribute) {
             if ($attribute->getName() === ImportType::class) {
-                $attribute->newInstance();
-                $properties = array_merge($properties, $attribute->getArguments());
+                $instance = $attribute->newInstance();
+                assert($instance instanceof ImportType);
+                $properties = array_merge($properties, $instance->from);
             }
         }
 
