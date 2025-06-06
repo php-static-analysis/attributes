@@ -132,14 +132,10 @@ class TypeTest extends TestCase
     public static function getTypeFromReflection(
         ReflectionProperty | ReflectionClassConstant | ReflectionMethod | ReflectionFunction | ReflectionClass $reflection
     ): string {
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getInstances($reflection, Type::class);
         $type = '';
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === Type::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof Type);
-                $type = $instance->type;
-            }
+        foreach ($instances as $instance) {
+            $type = $instance->type;
         }
 
         return $type;

@@ -36,14 +36,10 @@ class PropertyTest extends TestCase
     public static function getPropertiesFromReflection(
         ReflectionProperty | ReflectionClass $reflection
     ): array {
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getInstances($reflection, Property::class);
         $properties = [];
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === Property::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof Property);
-                $properties = array_merge($properties, $instance->properties);
-            }
+        foreach ($instances as $instance) {
+            $properties = array_merge($properties, $instance->properties);
         }
 
         return $properties;

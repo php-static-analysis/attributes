@@ -78,16 +78,7 @@ class DeprecatedTest extends TestCase
     public static function getDeprecatedFromReflection(
         ReflectionMethod | ReflectionFunction | ReflectionClass | ReflectionProperty $reflection
     ): bool {
-        $attributes = $reflection->getAttributes();
-        $deprecated = false;
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === Deprecated::class) {
-                $attribute->newInstance();
-                $deprecated = true;
-            }
-        }
-
-        return $deprecated;
+        return AttributeHelper::getInstances($reflection, Deprecated::class) !== [];
     }
 }
 

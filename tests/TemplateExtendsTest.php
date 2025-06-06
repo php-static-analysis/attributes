@@ -17,14 +17,10 @@ class TemplateExtendsTest extends TestCase
     public static function getTemplateExtendssFromReflection(
         ReflectionClass $reflection
     ): string {
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getInstances($reflection, TemplateExtends::class);
         $extends = '';
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === TemplateExtends::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof TemplateExtends);
-                $extends = $instance->class;
-            }
+        foreach ($instances as $instance) {
+            $extends = $instance->class;
         }
 
         return $extends;

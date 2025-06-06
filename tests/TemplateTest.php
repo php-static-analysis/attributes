@@ -97,18 +97,14 @@ class TemplateTest extends TestCase
     public static function getTemplatesFromReflection(
         ReflectionMethod | ReflectionFunction | ReflectionClass $reflection
     ): array {
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getInstances($reflection, Template::class);
         $templates = [];
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === Template::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof Template);
-                $templateValue = $instance->name;
-                if ($instance->of !== null) {
-                    $templateValue .= ' of ' . $instance->of;
-                }
-                $templates[] = $templateValue;
+        foreach ($instances as $instance) {
+            $templateValue = $instance->name;
+            if ($instance->of !== null) {
+                $templateValue .= ' of ' . $instance->of;
             }
+            $templates[] = $templateValue;
         }
 
         return $templates;

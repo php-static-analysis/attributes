@@ -8,6 +8,9 @@
             "PhpStaticAnalysis\\Attributes\\": "src/"
         }
     },
+    "autoload-dev": {
+        "files": ["tests/AttributeHelper.php"]
+    },
     "authors": [
         {
             "name": "Carlos Granados",

@@ -29,16 +29,7 @@ class ImmutableTest extends TestCase
     public static function getImmutableFromReflection(
         ReflectionClass $reflection
     ): bool {
-        $attributes = $reflection->getAttributes();
-        $immutable = false;
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === Immutable::class) {
-                $attribute->newInstance();
-                $immutable = true;
-            }
-        }
-
-        return $immutable;
+        return AttributeHelper::getInstances($reflection, Immutable::class) !== [];
     }
 }
 

@@ -27,14 +27,10 @@ class DefineTypeTest extends TestCase
     public static function getPropertiesFromReflection(
         ReflectionClass $reflection
     ): array {
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getInstances($reflection, DefineType::class);
         $properties = [];
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === DefineType::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof DefineType);
-                $properties = array_merge($properties, $instance->types);
-            }
+        foreach ($instances as $instance) {
+            $properties = array_merge($properties, $instance->types);
         }
 
         return $properties;

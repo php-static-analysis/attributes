@@ -28,14 +28,10 @@ class ImportTypeTest extends TestCase
     public static function getPropertiesFromReflection(
         ReflectionClass $reflection
     ): array {
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getInstances($reflection, ImportType::class);
         $properties = [];
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === ImportType::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof ImportType);
-                $properties = array_merge($properties, $instance->from);
-            }
+        foreach ($instances as $instance) {
+            $properties = array_merge($properties, $instance->from);
         }
 
         return $properties;

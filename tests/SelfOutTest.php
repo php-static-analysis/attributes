@@ -80,14 +80,10 @@ class SelfOutTest extends TestCase
     private function getSelfOut(string $methodName): string
     {
         $reflection = new ReflectionMethod($this, $methodName);
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getInstances($reflection, SelfOut::class);
         $selfOut = '';
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === SelfOut::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof SelfOut);
-                $selfOut = $instance->type;
-            }
+        foreach ($instances as $instance) {
+            $selfOut = $instance->type;
         }
 
         return $selfOut;

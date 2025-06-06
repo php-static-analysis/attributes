@@ -22,14 +22,10 @@ class RequireImplementsTest extends TestCase implements RequireTestInterface, Re
     public static function getRequireImplementssFromReflection(
         ReflectionClass $reflection
     ): array {
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getInstances($reflection, RequireImplements::class);
         $implements = [];
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === RequireImplements::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof RequireImplements);
-                $implements = array_merge($implements, $instance->interfaces);
-            }
+        foreach ($instances as $instance) {
+            $implements = array_merge($implements, $instance->interfaces);
         }
 
         return $implements;

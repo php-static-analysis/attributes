@@ -111,26 +111,17 @@ class ParamOutTest extends TestCase
     public static function getParamOutsFromReflection(
         ReflectionMethod | ReflectionFunction $reflection
     ): array {
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getFunctionInstances($reflection, ParamOut::class);
         $paramOuts = [];
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === ParamOut::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof ParamOut);
-                $paramOuts = array_merge($paramOuts, $instance->params);
-            }
+
+        foreach ($instances['function'] as $instance) {
+            $paramOuts = array_merge($paramOuts, $instance->params);
         }
 
-        $parameters = $reflection->getParameters();
-        foreach ($parameters as $parameter) {
-            $attributes = $parameter->getAttributes();
-            foreach ($attributes as $attribute) {
-                if ($attribute->getName() === ParamOut::class) {
-                    $instance = $attribute->newInstance();
-                    assert($instance instanceof ParamOut);
-                    $argument = $instance->params[array_key_first($instance->params)];
-                    $paramOuts[$parameter->name] = $argument;
-                }
+        foreach ($instances['parameters'] as $name => $attrs) {
+            foreach ($attrs as $instance) {
+                $argument = $instance->params[array_key_first($instance->params)];
+                $paramOuts[$name] = $argument;
             }
         }
 

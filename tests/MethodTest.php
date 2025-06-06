@@ -25,14 +25,10 @@ class MethodTest extends TestCase
     public static function getMethodsFromReflection(
         ReflectionClass $reflection
     ): array {
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getInstances($reflection, Method::class);
         $methods = [];
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === Method::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof Method);
-                $methods = array_merge($methods, $instance->methods);
-            }
+        foreach ($instances as $instance) {
+            $methods = array_merge($methods, $instance->methods);
         }
 
         return $methods;

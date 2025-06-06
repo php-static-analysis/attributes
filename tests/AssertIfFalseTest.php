@@ -115,26 +115,17 @@ class AssertIfFalseTest extends TestCase
     public static function getAssertsFromReflection(
         ReflectionMethod | ReflectionFunction $reflection
     ): array {
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getFunctionInstances($reflection, AssertIfFalse::class);
         $asserts = [];
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === AssertIfFalse::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof AssertIfFalse);
-                $asserts = array_merge($asserts, $instance->params);
-            }
+
+        foreach ($instances['function'] as $instance) {
+            $asserts = array_merge($asserts, $instance->params);
         }
 
-        $parameters = $reflection->getParameters();
-        foreach ($parameters as $parameter) {
-            $attributes = $parameter->getAttributes();
-            foreach ($attributes as $attribute) {
-                if ($attribute->getName() === AssertIfFalse::class) {
-                    $instance = $attribute->newInstance();
-                    assert($instance instanceof AssertIfFalse);
-                    $argument = $instance->params[array_key_first($instance->params)];
-                    $asserts[$parameter->name] = $argument;
-                }
+        foreach ($instances['parameters'] as $name => $attrs) {
+            foreach ($attrs as $instance) {
+                $argument = $instance->params[array_key_first($instance->params)];
+                $asserts[$name] = $argument;
             }
         }
 
