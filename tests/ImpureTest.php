@@ -32,16 +32,7 @@ class ImpureTest extends TestCase
     public static function getImpureFromReflection(
         ReflectionMethod | ReflectionFunction $reflection
     ): bool {
-        $attributes = $reflection->getAttributes();
-        $impure = false;
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === Impure::class) {
-                $attribute->newInstance();
-                $impure = true;
-            }
-        }
-
-        return $impure;
+        return AttributeHelper::getInstances($reflection, Impure::class) !== [];
     }
 }
 

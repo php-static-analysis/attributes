@@ -64,15 +64,6 @@ class IsReadOnlyTest extends TestCase
     private function getReadOnly(string $propertyName): bool
     {
         $reflection = new ReflectionProperty($this, $propertyName);
-        $attributes = $reflection->getAttributes();
-        $isReadOnly = false;
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === IsReadOnly::class) {
-                $attribute->newInstance();
-                $isReadOnly = true;
-            }
-        }
-
-        return $isReadOnly;
+        return AttributeHelper::getInstances($reflection, IsReadOnly::class) !== [];
     }
 }

@@ -33,14 +33,10 @@ class MixinTest extends TestCase
     public static function getMixinsFromReflection(
         ReflectionClass $reflection
     ): array {
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getInstances($reflection, Mixin::class);
         $mixins = [];
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === Mixin::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof Mixin);
-                $mixins = array_merge($mixins, $instance->classes);
-            }
+        foreach ($instances as $instance) {
+            $mixins = array_merge($mixins, $instance->classes);
         }
 
         return $mixins;

@@ -30,18 +30,14 @@ class TemplateCovariantTest extends TestCase
     public static function getTemplateCovariantsFromReflection(
         ReflectionClass $reflection
     ): array {
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getInstances($reflection, TemplateCovariant::class);
         $templates = [];
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === TemplateCovariant::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof TemplateCovariant);
-                $templateValue = $instance->name;
-                if ($instance->of !== null) {
-                    $templateValue .= ' of ' . $instance->of;
-                }
-                $templates[] = $templateValue;
+        foreach ($instances as $instance) {
+            $templateValue = $instance->name;
+            if ($instance->of !== null) {
+                $templateValue .= ' of ' . $instance->of;
             }
+            $templates[] = $templateValue;
         }
 
         return $templates;

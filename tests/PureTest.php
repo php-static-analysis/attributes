@@ -32,16 +32,7 @@ class PureTest extends TestCase
     public static function getPureFromReflection(
         ReflectionMethod | ReflectionFunction $reflection
     ): bool {
-        $attributes = $reflection->getAttributes();
-        $pure = false;
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === Pure::class) {
-                $attribute->newInstance();
-                $pure = true;
-            }
-        }
-
-        return $pure;
+        return AttributeHelper::getInstances($reflection, Pure::class) !== [];
     }
 }
 

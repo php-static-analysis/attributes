@@ -43,14 +43,10 @@ class TemplateUseTest extends TestCase
     public static function getTemplateUsesFromReflection(
         ReflectionClass $reflection
     ): array {
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getInstances($reflection, TemplateUse::class);
         $uses = [];
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === TemplateUse::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof TemplateUse);
-                $uses = array_merge($uses, $instance->traits);
-            }
+        foreach ($instances as $instance) {
+            $uses = array_merge($uses, $instance->traits);
         }
 
         return $uses;

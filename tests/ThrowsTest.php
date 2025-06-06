@@ -81,14 +81,10 @@ class ThrowsTest extends TestCase
     public static function getThrowsFromReflection(
         ReflectionMethod | ReflectionFunction $reflection
     ): array {
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getInstances($reflection, Throws::class);
         $throwss = [];
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === Throws::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof Throws);
-                $throwss = array_merge($throwss, $instance->exceptions);
-            }
+        foreach ($instances as $instance) {
+            $throwss = array_merge($throwss, $instance->exceptions);
         }
 
         return $throwss;

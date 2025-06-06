@@ -41,14 +41,10 @@ class TemplateImplementsTest extends TestCase implements TestInterface, TestInte
     public static function getTemplateImplementssFromReflection(
         ReflectionClass $reflection
     ): array {
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getInstances($reflection, TemplateImplements::class);
         $implements = [];
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === TemplateImplements::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof TemplateImplements);
-                $implements = array_merge($implements, $instance->interfaces);
-            }
+        foreach ($instances as $instance) {
+            $implements = array_merge($implements, $instance->interfaces);
         }
 
         return $implements;

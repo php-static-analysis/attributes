@@ -115,26 +115,17 @@ class ParamTest extends TestCase
     public static function getParamsFromReflection(
         ReflectionMethod | ReflectionFunction $reflection
     ): array {
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getFunctionInstances($reflection, Param::class);
         $params = [];
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === Param::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof Param);
-                $params = array_merge($params, $instance->params);
-            }
+
+        foreach ($instances['function'] as $instance) {
+            $params = array_merge($params, $instance->params);
         }
 
-        $parameters = $reflection->getParameters();
-        foreach ($parameters as $parameter) {
-            $attributes = $parameter->getAttributes();
-            foreach ($attributes as $attribute) {
-                if ($attribute->getName() === Param::class) {
-                    $instance = $attribute->newInstance();
-                    assert($instance instanceof Param);
-                    $argument = $instance->params[array_key_first($instance->params)];
-                    $params[$parameter->name] = $argument;
-                }
+        foreach ($instances['parameters'] as $name => $attrs) {
+            foreach ($attrs as $instance) {
+                $argument = $instance->params[array_key_first($instance->params)];
+                $params[$name] = $argument;
             }
         }
 

@@ -89,14 +89,10 @@ class ReturnsTest extends TestCase
     public static function getReturnsFromReflection(
         ReflectionMethod | ReflectionFunction $reflection
     ): string {
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getInstances($reflection, Returns::class);
         $returns = '';
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === Returns::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof Returns);
-                $returns = $instance->type;
-            }
+        foreach ($instances as $instance) {
+            $returns = $instance->type;
         }
 
         return $returns;

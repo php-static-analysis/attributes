@@ -30,18 +30,14 @@ class TemplateContravariantTest extends TestCase
     public static function getTemplateContravariantsFromReflection(
         ReflectionClass $reflection
     ): array {
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getInstances($reflection, TemplateContravariant::class);
         $templates = [];
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === TemplateContravariant::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof TemplateContravariant);
-                $templateValue = $instance->name;
-                if ($instance->of !== null) {
-                    $templateValue .= ' of ' . $instance->of;
-                }
-                $templates[] = $templateValue;
+        foreach ($instances as $instance) {
+            $templateValue = $instance->name;
+            if ($instance->of !== null) {
+                $templateValue .= ' of ' . $instance->of;
             }
+            $templates[] = $templateValue;
         }
 
         return $templates;

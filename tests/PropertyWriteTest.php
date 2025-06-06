@@ -27,14 +27,10 @@ class PropertyWriteTest extends TestCase
     public static function getPropertiesFromReflection(
         ReflectionClass $reflection
     ): array {
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getInstances($reflection, PropertyWrite::class);
         $properties = [];
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === PropertyWrite::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof PropertyWrite);
-                $properties = array_merge($properties, $instance->properties);
-            }
+        foreach ($instances as $instance) {
+            $properties = array_merge($properties, $instance->properties);
         }
 
         return $properties;

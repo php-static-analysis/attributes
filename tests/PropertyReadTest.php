@@ -27,14 +27,10 @@ class PropertyReadTest extends TestCase
     public static function getPropertiesFromReflection(
         ReflectionClass $reflection
     ): array {
-        $attributes = $reflection->getAttributes();
+        $instances = AttributeHelper::getInstances($reflection, PropertyRead::class);
         $properties = [];
-        foreach ($attributes as $attribute) {
-            if ($attribute->getName() === PropertyRead::class) {
-                $instance = $attribute->newInstance();
-                assert($instance instanceof PropertyRead);
-                $properties = array_merge($properties, $instance->properties);
-            }
+        foreach ($instances as $instance) {
+            $properties = array_merge($properties, $instance->properties);
         }
 
         return $properties;
